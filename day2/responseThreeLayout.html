@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<title>响应式三栏布局</title>
+        <style type='text/css'>
+        body{
+        	width:100%;
+        }
+		.div1,.div2,.div3{
+		    float:left;
+		}
+		.div1{
+			background:red;
+		}
+		.div2{
+			background:green;
+		}
+		.div3{
+			background:blue;
+		}
+		@media screen and (min-width:800px){
+		    .div1{
+		      width:20%;
+		    }
+		      .div2{
+		      width:60%;
+		    }
+		      .div3{
+		      width:20%;
+		    }
+		}
+		@media screen and (min-width: 600px) and (max-width:799px){
+		    .div1{
+		      width:40%;
+		    }
+		      .div2{
+		      width:60%;
+		    }
+		     .div3{
+		      width:100%;
+		    }
+		}
+		@media screen and (max-width:599px){
+		     .div1{
+		      width:100%;
+		    }
+		      .div2{
+		      width:100%;
+		    }
+		     .div3{
+		      width:100%;
+		    }
+		}
+
+        </style>
+	</head>
+	<body>
+		<div class="div1">left</div>
+		<div class="div2">center</div>
+		<div class="div3">right</div>
+	</body>
+</html>
