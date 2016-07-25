@@ -1,0 +1,185 @@
+前端开发基础课之HTML
+赵文博
+
+Doctype的作用
+Document Type文档声明类型 指定HTML页面使用的标准和版本 浏览器根据doctype指定文档的渲染模式
+
+渲染模式
+Quirks Mode 怪异模式 比较古老的
+Almost Standard Mode 准标准模式  接近标准
+Standard Mode 标准模式  W3C标准模式
+
+HTML4 VS. XHTML
+标签闭合
+标签及属性必须小写
+属性值加双引号
+
+HTML5设计思想
+兼容已有内容
+避免不必要的复杂性  doctype
+解决现实的问题
+优雅降级  如果不支持video、canvas等属性 在标签里写html
+尊重事实标准 比如 header footer center
+用户》开发者》浏览器厂商》标准制定者》理论完美
+
+HTML5标签
+流式元素
+元数据元素  base\link\meta
+标题、章节内容、段落内容
+嵌入式内容audio 
+可交互内容
+
+语义化
+HTML中的元素、属性及属性值都拥有某些含义
+开发者应该遵循语义来编写HTML
+好处：可访问性、搜索引擎优化、易读、易维护
+
+元数据元素
+base:指定基准URL链接打开方式
+title:页面标题
+meta:页面元数据
+noscript:浏览器不支持脚本时才展示的内容
+
+meta标签
+charset 
+name:keywords\description\viewport content
+http-equiv  content可以指定页面重定向
+使用meta扩展HTML
+<meta name="robots" content="noindex">//告诉搜索机器人不需要索引页面
+<meta name="renderer" content="webkit">//告诉浏览器的渲染模式  360的兼容模式（IE）和极速模式（webkit内核）
+<meta name="format-detection" content="telphone=no">//告诉浏览器把识别电话、电子邮件的功能关掉
+
+a标签
+target  _self _blank _parent _top
+href    mailto tel
+
+定义列表
+<dl>
+ <dt>导演：</dt>
+ <dd>陈凯歌</dd>
+ <dt>主演：</dt>
+ <dd>张国荣</dd>
+ <dd></dd>
+</dl>
+
+引用
+blockquote  cite
+
+图片
+img  属性alt=“替代文字”
+图片格式
+jpg多色彩照片
+png色彩较少时使用  png24可以半透明 
+gif无法半透明 可以多帧做动画
+
+HTML公共属性
+id
+title
+lang  html、textarea lang属性等
+style
+class
+自定义data-*
+
+命名
+微格式
+Schema.org
+ARIA Accessible Rich Internet Applications
+<div role=”button” arial-label=”refresh”></div>
+
+HTML学习
+教程
+webplatform.org的HTML教程
+CodeCademy HTML&CSS
+手册：
+HTML:The Living Standard
+W3C: HTML5 Spectification
+
+前端开发基础课之CSS
+
+继承
+某些属性可以继承父元素的属性值，除非指定某个具体值，一般与文字，列表，颜色相关的属性会继承
+选择器的优先级
+内联？ id的个数？ （伪）类的个数？ 标签的个数？
+
+opacity,display不会继承
+文字相关的很多属性都会继承 比如font-family
+
+字体系列
+serif:衬线体（Georgia\宋体）
+sans-serif：无衬线体（Arial\Helvetica\黑体\微软雅黑）
+monospace：等宽字体(Consolas\courier\宋体)
+
+中文字体不能放在英文字体前面
+font-family:"Microsoft Yahei",Arial,sans-serif;//这个样子是错的
+
+font-size
+字体的大小 可使用px、百分比、em等做单位
+初始值为medium(由浏览器设置)
+
+em
+一般是相对于font-size计算值的
+相对于父元素的font-size计算值
+
+line-height
+初始值为normal由浏览器决定
+段落文字一般取值1.4-1.8  font-size的倍数
+
+1.5与1.5em有区别
+建议写1.5  子元素会根据自身的font-size计算
+1.5em 
+
+font
+斜体、粗细、大小/行高、字体
+font-style font-weight font-size/line-height font-family
+
+颜色表示
+关键字
+RGB和RGBA（CSS3新属性 可指定透明度 只是指定该元素的透明度）opacity指定元素及元素内容的透明度
+HSL和HSLA  基准值不变的情况下 可以改变L的值使颜色加深
+
+text-align
+初始值由HTML的dir属性决定，可继承
+属性值：left\right\center\justify(分散对齐 多行时起作用)
+
+CSS进阶
+border:可以模拟出不同形状的三角形
+
+盒模型
+1.width:代表content-box的宽度；百分数相对于父容器（包含块）的content box的宽度；
+2.height:代表content-box的高度；百分数相对于父容器（包含块）的content box的高度；只有当包含块的高度不依赖该元素的时候，百分比才会生效；
+3.margin：margin折叠的问题;
+
+浮动：不会影响块级元素的排版 但是会影响行级元素的排版
+清除浮动：
+子元素clear
+空标签
+在父级元素里添加类.clearfix  ::before ::after
+.clearfix:after{
+content:””;
+display:block;
+clear:both;
+}
+BFC块级格式化上下文
+父元素overflow:hidden
+
+作用：
+清除浮动
+防止margin折叠
+双栏布局
+
+z-index：同级才有可比性
+
+CSS3新属性
+rgba
+background-size  cover contain
+border-radius
+box-shandow
+transform
+transition过渡
+animation   keyframes定义动画
+
+CSS预处理器
+LESS
+SASS
+PostCSS未来的CSS格式
+
