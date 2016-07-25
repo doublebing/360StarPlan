@@ -1,0 +1,53 @@
+现代前端工作流
+
+寻求优化：
+合并请求
+文件压缩
+
+工作流雏形：
+压缩代码-》合并文件-》上线
+
+新挑战
+环境分裂
+版本混乱
+过程繁杂
+
+grunt 前端编译
+全局安装grunt-cli 项目安装grunt
+
+现代网页三剑客
+
+相对完整的前端工作流
+js代码审查（代码审查工具：JSLink,JSHint,ESLint,JSCS）
+->编译（CoffeeScript，TypeScript,ESNEXT,DART）
+->合并
+->压缩
+
+CSS
+预编译（SaaS Less Stylus）
+->后处理(添前缀)
+->合并
+->压缩
+
+图片
+压缩-》合并（CSS Sprite）
+
+完整流程
+处理JS-》处理CSS-》处理图片-》自动化测试-》处理版本-》发布上线
+
+Gulp流式的管理
+Grunt与Gulp的区别
+Gulp配置、执行
+
+依赖管理
+Common.js
+AMD
+CMD
+
+Webpack 擅长做依赖管理的东西，但是没有一个完整的流程
+配置、执行
+
+Webpack(编译js，做js依赖管理的东西)+Gulp
+
+
+

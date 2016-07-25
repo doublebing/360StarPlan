@@ -1,0 +1,72 @@
+Node.js和Think.js
+
+异步非阻塞模型
+Node.js中的模块 CommonJS规范
+一个单独的文件就是一个模块
+每一个模块都是一个独立的作用域
+内部变量为私有
+
+模块作用域 不会污染全局作用域
+可以多次加载
+模块加载策略
+模块缓存 这样设计的好处：只有第一次加载时才有IO操作
+缓存在require.cache对象中
+删除模块缓存
+delete require.cache[moduleName];
+Object.keys(require.cache).foreach(function(key){
+delete require.cache[key];
+})
+
+常用模块
+http URL fs  path process query string
+
+npm
+npm install ...
+
+package.json 中定义依赖模块 直接npm install就可以了
+name唯一
+main入口文件
+
+Node.js框架
+express koa sails.js Think.js
+
+ES6/7特性
+1、arrows 省掉function关键字和return this并不会产生contents?
+arr.map(function(v){return v+1;})
+arr.map(v=>v+1;)
+2、classes
+3、Enhanced Object Literals
+4、Template Strings 反撇
+5、Destructuring
+6、Default+Rest+Spread  ...多参数
+7、Modules (import export)
+
+Callback hell
+Promise:三种状态 pending等待 resolved成功 rejected失败
+成功的话 放到done方法里去处理
+失败的话 放到fail方法里去处理
+
+把Callback包装厂Promise 是有快捷方法的
+
+Promise的问题
+
+this指向问题没有解决
+局部变量需要借助外层
+
+Generators: 使用*和yield，是迭代器的一个子类型
+问题：语义不易理解
+需要借助执行器
+无法与arrows一块使用
+yield和yield *
+
+Async functions 错误捕获、并行处理
+基于Promise
+返回Promise
+async/await更加语义化
+支持arrows一块使用
+不需要借助第三方模块
+
+缺点：Stage-3  没有Runtime支持
+
+Babel：JS compiler
+http://Babeljs.io
